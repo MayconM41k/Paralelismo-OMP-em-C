@@ -1,13 +1,4 @@
-/*
- * Exercício 9: Distribuição Manual com istart/iend
- * Objetivo: Entender a lógica por trás da diretiva for.
- * 
- * Tarefa: Crie um vetor de 100 posições. Usando o código de cálculo manual de istart e iend (apresentado na aula), 
- * paralelize um loop onde cada thread preenche sua fatia do vetor com o seu próprio ID. 
- * Imprima o vetor para verificar que cada thread preencheu sua região.
- */
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <omp.h>
 
 int main() {

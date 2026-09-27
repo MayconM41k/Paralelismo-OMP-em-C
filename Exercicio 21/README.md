@@ -1,4 +1,14 @@
-﻿#include <stdio.h>
+﻿# ExercÃ­cio 21: CÃ¡lculo de Pi com reduction
+
+## ðŸ“Œ Conceito Principal
+ParalelizaÃ§Ã£o da SÃ©rie de Leibniz para aproximaÃ§Ã£o de Pi e mediÃ§Ã£o empÃ­rica de Speedup.
+
+---
+
+## ðŸ’» CÃ³digo C (Limpo / Sem ComentÃ¡rios)
+
+`c
+#include <stdio.h>
 #include <math.h>
 #include <omp.h>
 
@@ -36,3 +46,19 @@ int main() {
 
     return 0;
 }
+
+`
+
+---
+
+### Como o CÃ³digo Funciona
+
+1. **FÃ³rmula MatemÃ¡tica:**
+   - Aproxima o valor de Pi atravÃ©s da SÃ©rie de Leibniz: Pi / 4 = 1 - 1/3 + 1/5 - 1/7 + ...
+
+2. **VersÃ£o Serial vs Paralela:**
+   - Executa primeiro a soma serial de 100.000.000 de termos.
+   - Em seguida, executa a versÃ£o paralela utilizando #pragma omp parallel for reduction(+:soma_parcial) variando o nÃºmero de threads (2, 4 e 8).
+
+3. **MediÃ§Ã£o de Tempo:**
+   - A funÃ§Ã£o omp_get_wtime() captura o tempo inicial e final para calcular e exibir a aceleraÃ§Ã£o (*speedup*) obtida com a paralelizaÃ§Ã£o.

@@ -1,12 +1,4 @@
-/*
- * Exercício 10: Usando parallel for
- * Objetivo: Usar a forma automática e simples de paralelizar loops.
- * 
- * Tarefa: Converta o Exercício 9 para usar #pragma omp parallel for. 
- * O resultado deve ser o mesmo, mas o código será muito mais limpo e legível.
- */
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <omp.h>
 
 int main() {

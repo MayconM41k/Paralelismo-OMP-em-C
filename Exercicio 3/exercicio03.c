@@ -1,12 +1,4 @@
-/*
- * Exercício 3: Contando Threads
- * Objetivo: Praticar a leitura de informações sobre o ambiente paralelo.
- * 
- * Tarefa: Crie um programa que, dentro de uma região paralela, cada thread imprima seu ID 
- * e o número total de threads. Execute com diferentes valores de OMP_NUM_THREADS (2, 4, 8).
- */
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <omp.h>
 
 int main() {

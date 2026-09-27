@@ -1,4 +1,14 @@
-﻿#include <stdio.h>
+﻿# ExercÃ­cio 22: MultiplicaÃ§Ã£o Matriz-Vetor
+
+## ðŸ“Œ Conceito Principal
+ParalelizaÃ§Ã£o de multiplicaÃ§Ã£o de matriz por vetor em Ã¡lgebra linear computacional.
+
+---
+
+## ðŸ’» CÃ³digo C (Limpo / Sem ComentÃ¡rios)
+
+`c
+#include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
 
@@ -42,3 +52,19 @@ int main() {
 
     return 0;
 }
+
+`
+
+---
+
+### Como o CÃ³digo Funciona
+
+1. **Mapeamento de Matriz 1D:**
+   - A matriz M de dimensÃ£o L x C Ã© alocada dinamicamente como um vetor contÃ­guo 1D acessado via M[i * C + j].
+
+2. **ParalelizaÃ§Ã£o das Linhas:**
+   - O loop externo de linhas (i) Ã© paralelizado com #pragma omp parallel for.
+   - Cada thread processa a multiplicaÃ§Ã£o escalar completa de uma linha da matriz pelo vetor V e armazena o resultado no elemento R[i].
+
+3. **Escalabilidade:**
+   - O programa testa matrizes de 1000 x 1000 e 3000 x 3000, demonstrando o ganho de tempo e escala do cÃ³digo paralelo em cargas elevadas.

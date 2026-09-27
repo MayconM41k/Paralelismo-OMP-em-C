@@ -1,14 +1,4 @@
-/*
- * Exercício 7: Combinando shared e private
- * Objetivo: Praticar a declaração explícita de múltiplas variáveis com escopos diferentes.
- * 
- * Tarefa: Crie um vetor global dados[10] com valores 1 a 10. Dentro de uma região paralela, 
- * declare uma variável soma_local como private. Cada thread deve somar os elementos do vetor 
- * que lhe "pertencem" (ex: thread 0 soma índices 0-2, thread 1 soma 3-5, etc.) em sua soma_local 
- * e imprimir o resultado. O vetor dados é shared.
- */
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <omp.h>
 
 int dados[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};

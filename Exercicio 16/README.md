@@ -1,4 +1,14 @@
-﻿#include <stdio.h>
+﻿# ExercÃ­cio 16: OperaÃ§Ãµes AtÃ´micas com atomic
+
+## ðŸ“Œ Conceito Principal
+OtimizaÃ§Ã£o de sincronizaÃ§Ã£o para operaÃ§Ãµes simples em memÃ³ria utilizando #pragma omp atomic.
+
+---
+
+## ðŸ’» CÃ³digo C (Limpo / Sem ComentÃ¡rios)
+
+`c
+#include <stdio.h>
 #include <stdlib.h>
 #include <omp.h>
 
@@ -41,3 +51,16 @@ int main() {
     free(vetor);
     return 0;
 }
+
+`
+
+---
+
+### Como o CÃ³digo Funciona
+
+1. **Diretiva #pragma omp atomic:**
+   - Garante que uma operaÃ§Ã£o de atualizaÃ§Ã£o de memÃ³ria especÃ­fica (como contador_global++) seja executada de forma atÃ´mica no nÃ­vel do hardware.
+
+2. **ComparaÃ§Ã£o com #pragma omp critical:**
+   - O programa executa a mesma contagem usando tomic e critical.
+   - tomic possui um overhead imensamente menor que critical, pois nÃ£o necessita de travas complexas de software (locks), sendo ideal para operaÃ§Ãµes aritmÃ©ticas simples.

@@ -1,13 +1,4 @@
-/*
- * Exercício 5: Isolando com private
- * Objetivo: Entender como private cria cópias isoladas para cada thread.
- * 
- * Tarefa: Modifique o Exercício 4. Declare uma variável contador_privado como private. 
- * Cada thread deve inicializá-la com 0, incrementá-la 100 vezes e imprimir 
- * "Thread <ID>: contador = <valor>". Observe que cada thread tem seu próprio valor.
- */
-
-#include <stdio.h>
+﻿#include <stdio.h>
 #include <omp.h>
 
 int main() {
